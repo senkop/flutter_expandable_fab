@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../flutter_expandable_fab.dart';
 
 /// The type of behavior of this widget.
-enum ExpandableFabType { fan, up, side }
+enum ExpandableFabType { fan, up, side, down }
 
 /// The position options for the FAB on the screen.
 enum ExpandableFabPos { right, left }
@@ -314,6 +314,10 @@ class ExpandableFabState extends State<ExpandableFab>
           break;
         case ExpandableFabType.up:
           dir = 90;
+          dist = widget.distance * (i + 1);
+          break;
+        case ExpandableFabType.down:
+          dir = 270;
           dist = widget.distance * (i + 1);
           break;
         case ExpandableFabType.side:
